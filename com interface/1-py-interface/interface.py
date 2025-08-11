@@ -23,7 +23,7 @@ botao =tk.Button(janela, text="Mostrar Texto", command=mostrar_mensagem, bg="blu
 botao.pack(pady=5)
 
 # Criar um rótulo para mostrar o resultado
-label_resultado = tk.Label(janela, text="", bg="cyan")
+label_resultado = tk.Label(janela, text="")
 label_resultado.pack(pady=10)
 
 # Executar a tela principal
