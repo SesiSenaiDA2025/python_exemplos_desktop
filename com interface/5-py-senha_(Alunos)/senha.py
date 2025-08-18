@@ -97,23 +97,23 @@ my_frame.pack(pady=20)
 
 # Carrega as imagens para os botões
 try:
-    create_image = ctk.CTkImage(light_image=Image.open(resource_path("create.png")),dark_image=Image.open(resource_path("create.png")), size=(20,20))
-    create_image = ctk.CTkImage(light_image=Image.open(resource_path("copy.png")),dark_image=Image.open(resource_path("copy.png")), size=(20,20))
-    create_image = ctk.CTkImage(light_image=Image.open(resource_path("clean.png")),dark_image=Image.open(resource_path("clean.png")), size=(20,20))
+    create_image = ctk.CTkImage(light_image=Image.open(resource_path("create.png")), dark_image=Image.open(resource_path("create.png")), size=(20, 20))
+    copy_image = ctk.CTkImage(light_image=Image.open(resource_path("copy.png")), dark_image=Image.open(resource_path("copy.png")), size=(20, 20))
+    clean_image = ctk.CTkImage(light_image=Image.open(resource_path("clean.png")), dark_image=Image.open(resource_path("clean.png")), size=(20, 20))
 except Exception as e:
     print(f"Não foi possível carregar uma ou mais imagens dos botões: {e}")
-    create_image = copy_image = clean_image =None
+    create_image = copy_image = clean_image = None
 
-# Botão para gerar senha forte (verde)
+# Botão para gerar a senha forte (verde)
 my_button = ctk.CTkButton(my_frame, text="Gerar senha forte", command=new_rand, image=create_image, compound="left", font=("Helvetica", 16), fg_color="#4CAF50", hover_color="#45a049")
 my_button.grid(row=0, column=0, padx=10)
 
-# Botão para copiar
-clip_button = ctk.CTkButton(my_frame, text="Copiar", command=clipper, image=create_image, compound="left", font=("Helvetica", 16))
+# Botão para copiar a senha gerada
+clip_button = ctk.CTkButton(my_frame, text="Copiar", command=clipper, image=copy_image, compound="left", font=("Helvetica", 16))
 clip_button.grid(row=0, column=1, padx=10)
 
 # Botão para limpar os campos (laranja)
-clear_button = ctk.CTkButton(my_frame, text="Limpar", command=clear_entry, image=create_image, compound="left", font=("Helvetica", 16), fg_color="#ff8000", hover_color="#F57c00")
+clear_button = ctk.CTkButton(my_frame, text="Limpar", command=clear_entry, image=clean_image, compound="left", font=("Helvetica", 16), fg_color="#FF9800", hover_color="#F57C00")
 clear_button.grid(row=0, column=2, padx=10)
 
 
